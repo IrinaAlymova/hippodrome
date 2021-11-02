@@ -10,12 +10,16 @@ In order for this Java program to work properly, make sure variable PATH contain
 ## Launch in command line
 
 1. Download this repository to your computer.
-2. Open the command line tool on your computer and go to /game package in this repository.
-3. Use Java Compiler that is included in a standard JDK to compile classes.
+2. Open the command line tool on your computer and go to this repository, create a /target folder there.
+3. Use Java Compiler that is included in a standard JDK to compile class into /target folder.
 ```bash
-javac Hippodrome.java
+javac -d target/ game/Horse.java
 ```
-4. Launch compiled main class using JVM passing 3 horse names as arguments:
+4. Go to /target folder and compile second class.
+```bash
+javac ./src/game/Hippodrome.java -d ./target/
+```
+4. Launch compiled main class using JVM, passing 3 horse names as arguments:
 ```bash
 java Hippodrome Sivka Burka Kaurka
 ```
@@ -24,8 +28,8 @@ java Hippodrome Sivka Burka Kaurka
 ## Archivation in executable .jar file
 
 1. Make steps #1 - #3 from the instruction above.
-2. Using standard Java archiver archive a compiled class.
+2. Using standard Java archiver archive a compiled class in /target folder.
 ```bash
-jar cvf program.jar .
+jar cvf hippodrome.jar .
 ```
-7. There will be a new .jar file in the same folder - it is executable and can be launched without commnd line.
+7. There will be a new .jar file in the same folder - it is executable.
