@@ -36,7 +36,7 @@ jar cvf hippodrome.jar .
 
 ## External libraries
 
-1. In case external library should be added to the program, please add its path to CLASSPATH during compilation and launch commands.
+1. In case external library should be added to the program, please add its path to CLASSPATH during compilation and launch.
 ```bash
 javac -cp ".;external-library.jar" src/game/Hippodrome.java
 java -cp ".;external-library.jar" src/game/Hippodrome
