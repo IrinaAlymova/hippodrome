@@ -13,23 +13,32 @@ In order for this Java program to work properly, make sure variable PATH contain
 2. Open the command line tool on your computer and go to this repository, create a /target folder there.
 3. Use Java Compiler that is included in a standard JDK to compile class into /target folder.
 ```bash
-javac -d target/ game/Horse.java
+javac -d target/ src/game/Horse.java
 ```
 4. Go to /target folder and compile second class.
 ```bash
-javac ./src/game/Hippodrome.java -d ./target/
+javac ../src/game/Hippodrome.java -d ../target/
 ```
-4. Launch compiled main class using JVM, passing 3 horse names as arguments:
+5. Launch compiled main class using JVM, passing 3 horse names as arguments:
 ```bash
-java Hippodrome Sivka Burka Kaurka
+java /game/Hippodrome Sivka Burka Kaurka
 ```
-5. Don't forget to bet before launch!
+6. Don't forget to bet before launch!
 
 ## Archivation in executable .jar file
 
-1. Make steps #1 - #3 from the instruction above.
+1. Make steps #1 - #4 from the instruction above.
 2. Using standard Java archiver archive a compiled class in /target folder.
 ```bash
 jar cvf hippodrome.jar .
 ```
-7. There will be a new .jar file in the same folder - it is executable.
+3. There will be a new .jar file in the /target folder - it is executable.
+
+## External libraries
+
+1. In case external libraries should be added to the program, please add CLASSPATH to compilation and launch commands.
+2. There will be a new .jar file in the /target folder - it is executable and can be used as external library:
+```bash
+javac -cp ".;external-library.jar" src/game/Hippodrome.java
+java -cp ".;external-library.jar" src/game/Hippodrome
+```
