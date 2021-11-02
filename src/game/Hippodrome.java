@@ -59,9 +59,9 @@ public class Hippodrome {
 
     public static void main(String[] args) {
         List<Horse> horses = new ArrayList<>();
-        horses.add(new Horse("Sivka", 3, 0));
-        horses.add(new Horse("Burka", 3, 0));
-        horses.add(new Horse("Kaurka", 3, 0));
+        horses.add(new Horse(args[0], 3, 0));
+        horses.add(new Horse(args[1], 3, 0));
+        horses.add(new Horse(args[2], 3, 0));
 
         game = new Hippodrome(horses);
         game.run();
