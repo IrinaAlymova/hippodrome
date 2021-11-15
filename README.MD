@@ -4,40 +4,38 @@ Hippodrome Game is a console game for betting on horses. You launch program for 
 
 Made as a homework for Java Course, showcases the use of Java standard compiler and archiver, including the use of external libraries.
 
-## Environment variables
-In order for this Java program to work properly, make sure variable PATH contains a path to JDK on your computer. Download JDK [here](https://www.oracle.com/java/technologies/downloads/) if you don't have it yet.
-
-## Launch in command line
+## Launch from command line
 
 1. Download this repository to your computer.
 2. Open the command line tool on your computer and go to this repository, create a /target folder there.
-3. Use Java Compiler that is included in a standard JDK to compile class into /target folder.
 ```bash
-javac -d target/ src/game/Horse.java
+mkdir target
 ```
-4. Go to /target folder and compile second class.
+3. Use Java Compiler to compile classes into /target folder.
 ```bash
-javac ../src/game/Hippodrome.java -d ../target/
+javac -d target/ src/game/*.java
 ```
-5. Launch compiled main class using JVM, passing 3 horse names as arguments:
+In case you use external libraries, please add them in CLASSPASS:
 ```bash
-java /game/Hippodrome Sivka Burka Kaurka
+javac -d target/ -cp .:external/external.jar src/game/*.java
 ```
-6. Don't forget to bet before launch!
-
-## Archivation in executable .jar file
-
-1. Make steps #1 - #4 from the instruction above.
-2. Using standard Java archiver archive a compiled class in /target folder.
+4. Go to /target folder and launch compiled main class using JVM, passing 3 arguments:
 ```bash
-jar cvf hippodrome.jar .
+java game.Hippodrome Horse1 Horse2 Horse3
 ```
-3. There will be a new .jar file in the /target folder - it is executable.
-
-## External libraries
-
-1. In case external library should be added to the program, please add its path to CLASSPATH during compilation and launch.
+In case you use external libraries, please add them in CLASSPASS:
 ```bash
-javac -cp ".;external-library.jar" src/game/Hippodrome.java
-java -cp ".;external-library.jar" src/game/Hippodrome
+java -cp .:../external/external.jar game.Hippodrome Horse1 Horse2 Horse3
+```
+
+## Launch from executable .jar file
+
+1. Make steps #1 - #3 from the instruction above.
+2. Using standard Java archiver archive a compiled class in /target folder stating Hippodrome.class as main:
+```bash
+jar cvfe hippodrome.jar . game/Hippodrome.class
+```
+3. There will be a new .jar file in the /target folder - it is executable:
+```bash
+java -jar hippodrome.jar Horse1 Horse2 Horse3
 ```

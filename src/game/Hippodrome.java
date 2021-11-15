@@ -2,6 +2,7 @@ package game;
 
 import java.util.ArrayList;
 import java.util.List;
+//import external_package.ExternalClass;
 
 public class Hippodrome {
     public static Hippodrome game;
@@ -16,6 +17,7 @@ public class Hippodrome {
     }
 
     public void move() {
+        //ExternalClass.printLine();
         for (Horse horse : horses) {
             horse.move();
         }
