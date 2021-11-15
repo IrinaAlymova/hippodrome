@@ -35,7 +35,7 @@ java -cp .:../external/external.jar game.Hippodrome Horse1 Horse2 Horse3
 ```bash
 jar cvfe hippodrome.jar . game/Hippodrome.class
 ```
-3. There will be a new .jar file in the /target folder - it is executable:
+3. There will be a new .jar file in the /target folder - it is executable, use the command below to launch the program:
 ```bash
 java -jar hippodrome.jar Horse1 Horse2 Horse3
 ```
